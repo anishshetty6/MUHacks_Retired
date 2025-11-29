@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Providers from "@/providers/Providers";
-import { MySidebar } from "@/components/sidebar/Sidebar";
 import { Toaster } from "@/components/ui/toaster"
 
 const geistSans = localFont({
@@ -40,7 +39,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>
-          <MySidebar>{children}</MySidebar>
+          {children}
         </Providers>
         <Toaster />
       </body>

@@ -1,7 +1,7 @@
 "use client"
 
 import HeroSection from "@/components/landing/HeroSection"
-import AboutSection from "@/components/landing/AboutSection"
+import Analytics from "@/components/analytics/analytics"
 import Footer from "@/components/landing/Footer"
 import ContactSection from "@/components/landing/ContactSection"
 
@@ -13,7 +13,7 @@ export default function Home() {
       <div className="relative z-10">
         <main className="container mx-auto px-4">
           <HeroSection />
-          <AboutSection />
+          <Analytics />
           {/* <ContactSection /> */}
         </main>
         <Footer />
