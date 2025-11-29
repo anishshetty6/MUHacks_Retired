@@ -8,6 +8,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
+import { useGenre } from '@/contexts/GenreContext';
 
 const SearchBar: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -17,7 +18,7 @@ const SearchBar: React.FC = () => {
   const [dragActive, setDragActive] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [isUrlMode, setIsUrlMode] = useState(false);
-  const [activeTab, setActiveTab] = useState('All');
+  const { activeTab, setActiveTab } = useGenre();
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
   const [mounted, setMounted] = useState(false);

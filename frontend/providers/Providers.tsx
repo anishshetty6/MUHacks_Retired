@@ -1,6 +1,7 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "react-hot-toast";
 import { ThemeProvider } from "./theme-provider";
+import { GenreProvider } from "@/contexts/GenreContext";
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -12,28 +13,30 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
           enableSystem
           disableTransitionOnChange
         >
-          <Toaster
-            position="top-center"
-            reverseOrder={false}
-            gutter={8}
-            containerClassName=""
-            containerStyle={{}}
-            toastOptions={{
-              // Define default options
-              className: "",
-              duration: 5000,
-              style: {
-                background: "#363636",
-                color: "#fff",
-              },
+          <GenreProvider>
+            <Toaster
+              position="top-center"
+              reverseOrder={false}
+              gutter={8}
+              containerClassName=""
+              containerStyle={{}}
+              toastOptions={{
+                // Define default options
+                className: "",
+                duration: 5000,
+                style: {
+                  background: "#363636",
+                  color: "#fff",
+                },
 
-              // Default options for specific types
-              success: {
-                duration: 3000,
-              },
-            }}
-          />
-          {children}
+                // Default options for specific types
+                success: {
+                  duration: 3000,
+                },
+              }}
+            />
+            {children}
+          </GenreProvider>
         </ThemeProvider>
       </ClerkProvider>
     </>
